@@ -1,7 +1,317 @@
-body {
-    display: flex;
-    width: 90vw;
-    flex-direction: column;
-    margin: 10%;
+.grid-1 {
+    display: grid;
+    background-color: rgb(221, 221, 221);
+    margin:0;
+    text-align: center;
+    font-size: 1em;
+    grid-template-areas: 
+    "head head head"
+    "hero hero cat"
+    "main main side"
+    "foot foot foot";
+    grid-gap: 15px;
+    height: 100vh;
+    grid-template-rows: 1fr 4fr 4fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Button */
+#button {
+    background-color:rgb(255, 255, 255);
+    border: 1px solid rgb(144, 144, 144);
+    padding: 10px;
+    border-radius: 3px;
+    transition: box-shadow 0.3s ease;
+    transition: scale 0.3s ease;
+    margin: 3%;
 
 }
+#button:hover {
+    background-color:rgb(126, 199, 209);
+    box-shadow: 3px 5px 1px rgba(0, 0, 0, 0.5);
+    scale: 1.1;
+    border: none;
+
+}
+/* Other adjustements */
+a {
+    text-decoration: none;
+    color:rgb(57, 57, 57); 
+}
+a:visited {
+    color:rgb(89, 93, 26)
+}
+a:visited:hover {
+    color:rgb(255, 255, 255)
+}
+
+.leaf {
+    height: 13vh;
+}
+
+p {
+    font-size: 2.5vh;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#call-to-action {
+    color: rgba(46,48,36,255);
+    background-color: rgb(221, 221, 221);
+    padding: 2%;
+    margin: 5%;
+    width: 100%;
+}
+
+.cat-pic-text {
+    color: rgba(46,48,36,255);
+    background-color: rgb(221, 221, 221);
+    padding: 2%;
+    margin: 5%;
+    width: 100%;
+}
+
+
+/* "ADS" */
+.Cat-pic{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-image: url(images/pexels-nomino-3069334.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+}
+.Cat-pic2{
+    display: flex;
+    justify-content: center;
+    align-items:end;
+    background-image: url(images/pexels-nomino-3069334.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+}
+
+/* Header section */
+header {
+    display: grid;
+    grid-area: head;
+    grid-template-areas: "brand nav tools";
+    grid-template-columns: 1fr 2fr 1fr;
+    border: 2px solid black;
+    background-color: rgb(206, 202, 221);
+}
+/* within header 1.1 */
+.Brand {
+    display: flex;
+    grid-area: brand;
+    justify-content: center;
+    align-items: center;
+}
+/* within header 1.2 */
+nav {
+    display: flex;
+    grid-area: nav;
+    justify-content: center;
+    align-items: center;
+}
+/* within header 1.3 */
+.Tools {
+    display: flex;
+    grid-area: tools;
+    align-items: center;
+    justify-content: center;
+}
+/* Hero section */
+.Hero {
+    display: grid;
+    grid-area: hero;
+    grid-template-areas: 
+    "feature action";
+    grid-template-columns: 2fr 1fr;
+    border: 2px solid black;
+}
+/* within hero 2.1 */
+.hero-feature {
+    display:flex;
+    grid-area: feature;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(219, 221, 202);
+
+}
+/* within hero 2.2 */
+.hero-call-to-action {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    grid-area: action;
+    background-image: url(images/Ziereremit_in_Flottbeck_bei_Hamburg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Main / body section */
+main {
+    display:grid;
+    grid-area: main;
+    grid-template-areas:
+    "artfeature artlisting";
+    grid-template-columns: 1fr 2fr;
+    border: 2px solid black;
+}
+/* within body 4.1 */
+.article-feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: artfeature;
+    background-color: rgb(202, 221, 221);
+}
+/* within body 4.2 */
+.article-listing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: artlisting;
+    background-color: rgb(209, 221, 202);
+}
+
+/* Sidebar section */
+.sidebar {
+    grid-area: side;
+    border: 2px solid black;
+    background-color: rgb(221, 202, 212);
+}
+
+/* Advertisement section */
+.Cat-pic {
+    grid-area: cat;
+    background-color: pink;
+}
+/* Footer section */
+footer {
+    grid-area: foot;
+    border: 2px solid #000000;
+    background-color: rgb(202, 217, 221);
+}
+/* Second ad display none until minimum width */
+@media (min-width: 992px){
+    .Cat-pic2 {
+    display: none;
+}
+}
+
+/* Tablet layout */
+
+@media screen and (max-width: 992px) {
+    .Cat-pic{
+        display: none;
+    }
+    .Cat-pic2{
+        grid-area: cat2;
+        border: none;
+        height: 50vh;
+    }
+    .grid-1{
+        grid-template-areas:
+        "head"
+        "hero"
+        "main"
+        "side"
+        "foot";
+        grid-template-columns: 1fr;
+    }
+    .Hero {
+        grid-template-areas: 
+        "feature"
+        "action";
+        grid-template-columns: auto;
+    }
+    .hero-feature {
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    .hero-call-to-action {
+        height: 70vh;
+        background-position: 1% 90%;
+    }
+    main {
+        grid-template-areas:
+        "artfeature cat2 "
+        "artlisting artlisting ";
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 2fr 1fr;
+    }
+    .article-listing {
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    .sidebar {
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+}
+
+/* Phone layout */
+@media screen and (max-width: 576px) {
+    .grid-1 {
+        display:grid;
+        grid-template-areas: 
+        "head"
+        "hero"
+        "main"
+        "foot";
+        grid-template-columns: 1fr;
+    }
+    header {
+        display:grid;
+        grid-template-areas: 
+        "brand brand"
+        "nav tools";
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+
+    .Hero {
+        grid-template-areas: 
+        "action action";
+    }
+
+    main {
+        grid-template-areas:
+        "artfeature"
+        "cat2"
+        "artlisting";
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+    }
+    footer {
+        grid-template-areas: 
+        "foot";
+    }
+    .article-feature{
+        padding-top: 2%;
+        padding-bottom: 2%;
+        
+    }
+    .hero-call-to-action {
+        height: 50vh;
+        background-position: 1% 90%;
+    }
+    .hero-feature {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    .Cat-pic {
+        display: none;
+    }
+    .Cat-pic2 {
+        height: 50vh;
+        background-position: 1% 55%;
+    }
+}
+

@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
+ul {
+    line-height: 2em;
+    list-style: none;
+    text-align: center; 
+}
+
+.button {
+    background-color:rgb(255, 255, 255);
+    border: 1px solid rgb(144, 144, 144);
+    padding: 10px;
+    border-radius: 3px;
+    transition: box-shadow 0.3s ease;
+    transition: scale 0.3s ease;
+    margin: 3%;
+}
+
+.button:hover {
+    background-color:rgb(126, 199, 209);
+    box-shadow: 3px 5px 1px rgba(0, 0, 0, 0.5);
+    scale: 1.1;
+    border: none;
+    cursor:pointer;
+}
