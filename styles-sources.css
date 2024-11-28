@@ -16,15 +16,15 @@ ul {
     border: 1px solid rgb(144, 144, 144);
     padding: 10px;
     border-radius: 3px;
-    transition: box-shadow 0.3s ease;
-    transition: scale 0.3s ease;
     margin: 3%;
 }
 
 .button:hover {
     background-color:rgb(126, 199, 209);
+    color:azure;
     box-shadow: 3px 5px 1px rgba(0, 0, 0, 0.5);
-    scale: 1.1;
     border: none;
     cursor:pointer;
+    transform: scale(1.5,1.5);
+    transition: box-shadow 0.3s ease;
 }
